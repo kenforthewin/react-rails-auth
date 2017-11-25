@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api:
+    volumes:
+      - ${PWD}/api:/app
+      - /deps/bundle
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+  web:
+    volumes: 
+      - ${PWD}/www:/app
+      - /app/node_modules
+    ports:
+      - 3001:3000
+      - 49153:49153
+    environment:
+      - NODE_ENV=development
