@@ -5,7 +5,7 @@ services:
     depends_on:
       - db
     environment:
-      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   web:
     build: www/
     depends_on:
@@ -15,6 +15,6 @@ services:
     volumes:
       - db_store:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=changeme
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 volumes:
   db_store:

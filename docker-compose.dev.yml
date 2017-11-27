@@ -5,9 +5,10 @@ services:
       - ${PWD}/api:/app
       - /deps/bundle
     ports:
-      - "3000:3000"
+      - 3000:3000
     environment:
       - RAILS_ENV=development
+      - WEB_HOST=localhost:3001
   web:
     volumes: 
       - ${PWD}/www:/app
@@ -17,3 +18,4 @@ services:
       - 49153:49153
     environment:
       - NODE_ENV=development
+      - REACT_APP_API_HOST=localhost:3000

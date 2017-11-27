@@ -9,7 +9,5 @@ cd /app
 bundle exec rake db:create RAILS_ENV=$RAILS_ENV
 bundle exec rake db:migrate RAILS_ENV=$RAILS_ENV
 
-if [ "$RAILS_ENV" = "development" ]; then
-  bundle exec puma -d
-  exec tail -f log/development.log
-fi
+bundle exec puma -d
+exec tail -f log/${RAILS_ENV}.log

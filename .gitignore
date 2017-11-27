@@ -14,3 +14,4 @@ api/tmp/*
 
 api/.byebug_history
 www/node_modules
+.env*

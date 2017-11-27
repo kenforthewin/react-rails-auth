@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_PATH = 'http://localhost:3000/auth/'
+const API_PATH = process.env.REACT_APP_API_HOST + "/auth/"
 
 export const doSignIn = () => {
   return {
