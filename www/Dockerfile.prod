@@ -2,6 +2,7 @@ FROM node:6
 USER root
 ### Configure Nginx
 ENV NGINX_VERSION 1.11.6-1~jessie
+ENV REACT_APP_API_HOST=${API_LETSENCRYPT_HOST}
 ENV GPG_FINGERPRINT=573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys ${GPG_FINGERPRINT} \
   || apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys ${GPG_FINGERPRINT}
