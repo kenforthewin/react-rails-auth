@@ -7,6 +7,7 @@ services:
       - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
       - VIRTUAL_HOST=${API_LETSENCRYPT_HOST}
       - WEB_HOST=${WEB_LETSENCRYPT_HOST}
+      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
     restart: always
   web:
     build:
