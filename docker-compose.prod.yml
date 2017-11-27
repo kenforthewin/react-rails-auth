@@ -17,7 +17,6 @@ services:
       - LETSENCRYPT_HOST=${WEB_LETSENCRYPT_HOST}
       - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
       - VIRTUAL_HOST=${WEB_LETSENCRYPT_HOST}
-      - REACT_APP_API_HOST=${API_LETSENCRYPT_HOST}
     restart: always
   nginx:
     image: nginx
