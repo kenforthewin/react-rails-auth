@@ -12,6 +12,8 @@ services:
   web:
     build:
       dockerfile: Dockerfile.prod
+      args:
+        - REACT_APP_API_HOST=${API_LETSENCRYPT_HOST}
     environment:
       - NODE_ENV=production
       - LETSENCRYPT_HOST=${WEB_LETSENCRYPT_HOST}
