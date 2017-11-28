@@ -4,6 +4,7 @@ import {
   Route,
   Link,
 } from 'react-router-dom';
+import {browserHistory} from 'react-router';
 import {connect} from 'react-redux'
 import ReactLoading from 'react-loading';
 import SignedInCheck from './components/SignedInCheck';
@@ -11,7 +12,8 @@ import VisibleSignIn from './containers/VisibleSignIn';
 import SignOut from './containers/SignOut';
 import VisibleSignUp from './containers/VisibleSignUp';
 import './App.css';
-
+import {history} from './index'
+import {ConnectedRouter} from 'react-router-redux'
 const userRoutes = userSignedIn => {
   if(userSignedIn)
     return<li><Link to="/logout">Sign out</Link></li>
@@ -22,9 +24,10 @@ const userRoutes = userSignedIn => {
     ]
 }
 
+
 const mainApp = ({userSignedIn}) => {
   return (
-    <Router>
+    <ConnectedRouter history={history}>
       <div className="App">
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -35,7 +38,7 @@ const mainApp = ({userSignedIn}) => {
         <Route path="/logout" component={SignOut}/>
         <Route path="/register" component={VisibleSignUp}/>
       </div>
-    </Router>
+    </ConnectedRouter>
   )
 }
 

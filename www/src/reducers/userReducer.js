@@ -50,6 +50,11 @@ const userReducer = (state, action) => {
           [action.name]: action.val
         }
       }
+    case '@@router/LOCATION_CHANGE':
+      return {
+        ...state,
+        error_message: ''
+      }
     default:
       return state
     }
