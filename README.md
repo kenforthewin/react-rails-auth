@@ -9,6 +9,7 @@ Use this repo as a learning exercise for rolling your own token auth, or as a st
 ## Getting started
 All services in this repo are containerized. To get started, first make sure docker and docker-compose are installed.
 1. Clone the repo and navigate to its folder
+1. Create your own `.env` file at the base of the project. Refer to the `.env.sample` file for what's needed.
 1. Run the dev script with `./scripts/run-dev.sh`
 1. Wait for the images to build. 
 1. Eventually the dev server will be up at `localhost:3001`
