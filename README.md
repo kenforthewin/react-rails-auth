@@ -13,3 +13,6 @@ All services in this repo are containerized. To get started, first make sure doc
 1. Run the dev script with `./scripts/run-dev.sh`
 1. Wait for the images to build. 
 1. Eventually the dev server will be up at `localhost:3001`
+
+## Production stack
+For production, the React site uses an alternate Dockerfile to build a production image. This image uses a simple nginx server to serve the static files which are generated from the build. Then, a combination of [docker-gen](https://github.com/jwilder/docker-gen) and nginx are used to proxy requests to either the api or the react site. Finally, a (docker-letsencrypt-nginx-proxy-companion)[https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion] container is included to optionally allow both services SSL encryption through Let's Encrypt. 
